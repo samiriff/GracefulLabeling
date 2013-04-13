@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://mathworld.wolfram.com/GracefulGraph.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Graceful Graph -- from Wolfram MathWorld</title>
+
+<meta name="DC.Creator" content="Weisstein, Eric W.">
+<meta name="DC.Description" content="A labeled graph which can be &quot;gracefully numbered&quot; is called a graceful graph. Label the nodes with distinct nonnegative integers. Then label the graph edges with the absolute differences between node values. If the graph edge numbers then run from 1 to e, the graph is gracefully numbered. In order for a graph to be graceful, it must be without loops or multiple edges. Golomb showed that the number of graph edges connecting the even-numbered and odd-numbered sets of nodes is...">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2006-05-16">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Discrete Mathematics:Graph Theory:Labeled Graphs">
+<meta name="DC.Subject" scheme="MSC_2000" content="05C">
+<meta name="DC.Rights" content="Copyright 1999-2013 Wolfram Research, Inc.  See http://mathworld.wolfram.com/about/terms.html for a full terms of use statement.">
+<meta name="DC.Format" scheme="IMT" content="text/html">
+<meta name="DC.Identifier" scheme="URI" content="http://mathworld.wolfram.com/GracefulGraph.html">
+<meta name="DC.Language" scheme="RFC3066" content="en">
+<meta name="DC.Publisher" content="Wolfram Research, Inc.">
+<meta name="DC.Relation.IsPartOf" scheme="URI" content="http://mathworld.wolfram.com/">
+<meta name="DC.Type" scheme="DCMIType" content="Text">
+<meta name="Last-Modified" content="2006-05-16">
+<link rel="alternate" type="application/rss+xml" title="MathWorld Headline News" href="http://mathworld.wolfram.com/news/rss.xml">
+<link rel="stylesheet" type="text/css" href="./Graceful Graph -- from Wolfram MathWorld_files/mathworldv2.css">
+<link rel="shortcut icon" href="http://mathworld.wolfram.com/favicon_mathworld.png" type="image/png">
+<script type="text/javascript" async="" src="./Graceful Graph -- from Wolfram MathWorld_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./Graceful Graph -- from Wolfram MathWorld_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Graceful Graph -- from Wolfram MathWorld_files/mathworld.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Graceful Graph -- from Wolfram MathWorld_files/downloadNotebook.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5677369-3']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<table summary="" id="headerTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr>
+			<td>
+				<div id="logo">
+<img src="./Graceful Graph -- from Wolfram MathWorld_files/logo.png" alt="" usemap="#mwlogomap">
+
+<map name="mwlogomap" id="mwlogomap">
+  <area shape="rect" coords="0,30,200,47" href="http://www.wolfram.com/mathematica/" alt="Built with Mathematica Technology" title="Built with Mathematica Technology">
+  <area shape="rect" coords="0,0,617,30" href="http://mathworld.wolfram.com/" alt="Wolfram MathWorld" title="Wolfram MathWorld">
+</map>
+</div>
+			</td>
+			<td>
+				<div id="searchWrapper">
+					<form name="NavBarSearch" action="http://mathworld.wolfram.com/search/" method="get" accept-charset="UTF-8" onsubmit=" if (checkForDefaultInput(&#39;query_1&#39;, &#39;Search MathWorld&#39;)) { return false; }">
+						<input id="search" class="searchboxsub" name="query" type="text" value="Search MathWorld" onfocus="initTextInput(this,&#39;clear&#39;,&#39;Search MathWorld&#39;)" onblur="initTextInput(this,&#39;setDefault&#39;,&#39;Search MathWorld&#39;)">
+						<input type="image" src="./Graceful Graph -- from Wolfram MathWorld_files/search-icon.png" id="search-icon" alt="Search" onclick="if (checkForDefaultInput(&#39;query_1&#39;, &#39;Search MathWorld&#39;)) { return false;} else {document.NavBarSearch.submit(); }">
+					</form>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	
+<table summary="" id="pageTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr>
+			<td class="leftcolumn">
+			<!--Start nav content -->
+<!-- Sidebar -->
+
+				<div id="navigation">
+					<div><a href="http://mathworld.wolfram.com/topics/Algebra.html">Algebra</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/AppliedMathematics.html">Applied Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/CalculusandAnalysis.html">Calculus and Analysis</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/DiscreteMathematics.html">Discrete Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/HistoryandTerminology.html">History and Terminology</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/ProbabilityandStatistics.html">Probability and Statistics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/RecreationalMathematics.html">Recreational Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/Topology.html">Topology</a></div>
+					<div class="subnav">
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/letters/">Alphabetical Index</a><br>
+							<a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a><br>
+							<a href="http://mathworld.wolfram.com/cgi-bin/random.cgi">Random Entry</a><br>
+							<a href="http://mathworld.wolfram.com/whatsnew/">New in <em>MathWorld</em></a>
+						</div>
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/classroom/"><em>MathWorld</em> Classroom</a>
+						</div>			
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/about/">About <em>MathWorld</em></a><br>
+							<a href="http://mathworld.wolfram.com/contact/contribute.html">Contribute to <em>MathWorld</em></a><br>
+							<a href="http://mathworld.wolfram.com/contact/">Send a Message to the Team</a>
+						</div>
+						<div class="subnav-item last">
+							<a href="http://www.amazon.com/exec/obidos/ASIN/1584883472/ref=nosim/weisstein-20" target="_blank"><em>MathWorld</em> Book</a>
+						</div>
+					</div>
+				</div>
+				<div id="credits">
+					<div class="links"><a href="http://www.wolfram.com/webresources.html" target="_blank" title="Wolfram Web Resources">Wolfram Web Resources&nbsp;»</a></div>
+					<div class="lastupdated">
+						<a href="http://mathworld.wolfram.com/whatsnew/">13,150 entries</a><br>
+						<a href="http://mathworld.wolfram.com/whatsnew/">Last updated: Mon Apr  8 2013</a>
+					</div>
+					<div class="author">Created, developed, and nurtured&nbsp;by&nbsp;<a href="http://mathworld.wolfram.com/about/author.html" class="authorlink" title="Created, developed, and nurtured by Eric Weisstein">Eric&nbsp;Weisstein</a> at <a href="http://www.wolfram.com/" target="_blank" class="companylink" title="Wolfram Research">Wolfram&nbsp;Research</a></div>
+				</div>
+
+<!-- End Sidebar -->
+
+				<!--End nav content -->
+			</td>
+			<td class="mainCell">
+				
+<div id="mainContent">
+<!-- Begin Body -->
+<!-- Begin Subject -->
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/DiscreteMathematics.html">Discrete Mathematics</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/GraphTheory.html">Graph Theory</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/LabeledGraphs.html">Labeled
+ Graphs</a>&nbsp;&gt;<br>
+</div>
+<!-- End Subject -->
+<br>
+<!-- Begin Title -->
+<h1>Graceful Graph</h1>
+<!-- End Title -->
+<!-- Begin Total Content -->
+<!-- Begin Content -->
+<p>
+A <a href="http://mathworld.wolfram.com/LabeledGraph.html">labeled graph</a> which can be "gracefully numbered" is called a graceful graph. Label the nodes with distinct <a href="http://mathworld.wolfram.com/NonnegativeInteger.html">nonnegative
+ integers</a>. Then label the <a href="http://mathworld.wolfram.com/GraphEdge.html">graph edges</a> with the absolute
+ differences between node values. If the <a href="http://mathworld.wolfram.com/GraphEdge.html">graph edge</a>
+ numbers then run from 1 to <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline1.gif" class="inlineformula" width="6" height="14" border="0" alt="e">, the graph is gracefully
+ numbered. In order for a graph to be graceful, it must be without loops or <a href="http://mathworld.wolfram.com/MultipleEdge.html">multiple
+ edges</a>.
+</p>
+<img width="493" height="731" src="./Graceful Graph -- from Wolfram MathWorld_files/GracefulGraphs_700.gif" class="center-image" alt="GracefulGraphs">
+<p>
+Golomb showed that the number of <a href="http://mathworld.wolfram.com/GraphEdge.html">graph edges</a> connecting the <a href="http://mathworld.wolfram.com/EvenNumber.html">even</a>-numbered and <a href="http://mathworld.wolfram.com/OddNumber.html">odd</a>-numbered
+ sets of nodes is <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline2.gif" class="inlineformula" width="61" height="14" border="0" alt="|_(e+1)/2_|">, where <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline3.gif" class="inlineformula" width="6" height="14" border="0" alt="e"> is the number of
+ <a href="http://mathworld.wolfram.com/GraphEdge.html">graph edges</a>.
+</p>
+<img width="289" height="81" src="./Graceful Graph -- from Wolfram MathWorld_files/UngracefulGraphs_700.gif" class="center-image" alt="UngracefulGraphs">
+<p>
+The only ungraceful simple graphs with <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline4.gif" class="inlineformula" width="22" height="14" border="0" alt="&lt;=5"> nodes are
+ shown above.
+</p>
+<p>
+There are exactly <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline5.gif" class="inlineformula" width="12" height="14" border="0" alt="e!"> graceful graphs with <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline6.gif" class="inlineformula" width="6" height="14" border="0" alt="e"> <a href="http://mathworld.wolfram.com/GraphEdge.html">graph
+ edges</a> (Sheppard 1976), where <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline7.gif" class="inlineformula" width="27" height="14" border="0" alt="e!/2"> of these correspond
+ to different labelings of the same graph. Golomb (1974) showed that all complete
+ bipartite graphs are graceful. <a href="http://mathworld.wolfram.com/Caterpillar.html">caterpillar</a>; <a href="http://mathworld.wolfram.com/CompleteGraph.html">complete
+ graphs</a> <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline8.gif" class="inlineformula" width="15" height="14" border="0" alt="K_2">, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline9.gif" class="inlineformula" width="15" height="14" border="0" alt="K_3">, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline10.gif" class="inlineformula" width="76" height="14" border="0" alt="K_4=W_4=T"> (and only
+ these; Golomb 1974); <a href="http://mathworld.wolfram.com/CyclicGraph.html">cyclic graphs</a> <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline11.gif" class="inlineformula" width="15" height="14" border="0" alt="C_n"> when <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline12.gif" class="inlineformula" width="100" height="14" border="0" alt="n=0 or 3 (mod 4)">,
+ when the number of consecutive chords <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline13.gif" class="inlineformula" width="30" height="14" border="0" alt="k=2">, 3, or <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline14.gif" class="inlineformula" width="29" height="14" border="0" alt="n-3"> (Koh and Punnim 1982), or when they contain a
+ <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline15.gif" class="inlineformula" width="15" height="14" border="0" alt="P_k"> chord (Delorme <i>et al.</i> 1980, Koh and Yap
+ 1985, Punnim and Pabhapote 1987); <a href="http://mathworld.wolfram.com/GearGraph.html">gear graphs</a>; <a href="http://mathworld.wolfram.com/PathGraph.html">path
+ graphs</a>; the <a href="http://mathworld.wolfram.com/PetersenGraph.html">Petersen graph</a>; <a href="http://mathworld.wolfram.com/PolyhedralGraph.html">polyhedral
+ graphs</a> <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline16.gif" class="inlineformula" width="76" height="14" border="0" alt="T=K_4=W_4">, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline17.gif" class="inlineformula" width="9" height="14" border="0" alt="C">, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline18.gif" class="inlineformula" width="10" height="14" border="0" alt="O">, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline19.gif" class="inlineformula" width="10" height="14" border="0" alt="D">, and <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline20.gif" class="inlineformula" width="5" height="14" border="0" alt="I"> (Gardner 1983);
+ <a href="http://mathworld.wolfram.com/StarGraph.html">star graphs</a>; the <a href="http://mathworld.wolfram.com/UtilityGraph.html">utility
+ graph</a> (Gardner 1983); and <a href="http://mathworld.wolfram.com/WheelGraph.html">wheel graphs</a> (Frucht
+ 1988) are all graceful.
+</p>
+<p>
+Some graceful graphs have only one numbering, but others have more than one. It is conjectured that all trees are graceful (Bondy and Murty 1976), but this has only
+ been proved for trees with <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline21.gif" class="inlineformula" width="29" height="14" border="0" alt="&lt;=27"> graph vertices
+ (Aldred and McKay 1998). It has also been conjectured that all unicyclic graphs are
+ graceful.
+</p>
+<!-- End Content -->
+<div id="related">
+<!-- Begin See Also -->
+<span>SEE ALSO:</span> <a href="http://mathworld.wolfram.com/Edge-GracefulGraph.html">Edge-Graceful Graph</a>, <a href="http://mathworld.wolfram.com/HarmoniousGraph.html">Harmonious Graph</a>, <a href="http://mathworld.wolfram.com/LabeledGraph.html">Labeled
+ Graph</a>
+<!-- End See Also -->
+<!-- Begin CrossURL -->
+<!-- End CrossURL -->
+<!-- Begin Contributor -->
+<!-- End Contributor -->
+<!-- Begin References -->
+<div class="line">
+<!-- -->
+</div>
+<span>REFERENCES:</span>
+<p class="small">
+Abraham, J. and Kotzig, A. "All 2-Regular Graphs Consisting of 4-Cycles are
+Graceful." <i>Disc. Math.</i> <b>135</b>, 1-24, 1994.
+</p>
+<p class="small">
+Abraham, J. and Kotzig, A. "Extensions of Graceful Valuations of 2-Regular Graphs
+Consisting of 4-Gons." <i>Ars Combin.</i> <b>32</b>, 257-262, 1991.
+</p>
+<p class="small">
+Aldred, R.&nbsp;E.&nbsp;L. and McKay, B. "Graceful and Harmonious Labellings
+of Trees." <i>Bull. Inst. Combin. Appl.</i> <b>23</b>, 69-72, 1998.
+</p>
+<p class="small">
+Bloom, G.&nbsp;S. and Golomb, S.&nbsp;W. "Applications of Numbered Unidirected
+Graphs." <i>Proc. IEEE</i> <b>65</b>, 562-570, 1977.
+</p>
+<p class="small">
+Bolian, L. and Xiankun, Z. "On Harmonious Labellings of Graphs." <i>Ars
+Combin.</i> <b>36</b>, 315-326, 1993.
+</p>
+<p class="small">
+Bondy, J.&nbsp;A. and Murty, U.&nbsp;S.&nbsp;R. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0444194517/ref=nosim/weisstein-20">Graph
+Theory with Applications.</a></i> New York: North Holland, p.&nbsp;248, 1976.
+</p>
+<p class="small">
+Brualdi, R.&nbsp;A. and McDougal, K.&nbsp;F. "Semibandwidth of Bipartite Graphs
+and Matrices." <i>Ars Combin.</i> <b>30</b>, 275-287, 1990.
+</p>
+<p class="small">
+Brundage, M. "Graceful Graphs." <a href="http://www.qbrundage.com/michaelb/pubs/graceful/">http://www.qbrundage.com/michaelb/pubs/graceful/</a>.
+</p>
+<p class="small">
+Cahit, I. "Are All Complete Binary Trees Graceful?" <i>Amer. Math. Monthly</i> <b>83</b>,
+35-37, 1976.
+</p>
+<p class="small">
+Delorme, C.; Maheo, M.; Thuillier, H.; Koh, K.&nbsp;M.; and Teo, H.&nbsp;K. "Cycles
+with a Chord are Graceful." <i>J. Graph Theory</i> <b>4</b>, 409-415, 1980.
+</p>
+<p class="small">
+Frucht, R.&nbsp;W. and Gallian, J.&nbsp;A. "Labelling Prisms." <i>Ars Combin.</i> <b>26</b>,
+69-82, 1988.
+</p>
+<p class="small">
+Gallian, J.&nbsp;A. "A Survey: Recent Results, Conjectures, and Open Problems
+in Labelling Graphs." <i>J. Graph Th.</i> <b>13</b>, 491-504, 1989.
+</p>
+<p class="small">
+Gallian, J.&nbsp;A. "Open Problems in Grid Labeling." <i>Amer. Math. Monthly</i> <b>97</b>,
+133-135, 1990.
+</p>
+<p class="small">
+Gallian, J.&nbsp;A. "A Guide to the Graph Labelling Zoo." <i>Disc. Appl.
+Math.</i> <b>49</b>, 213-229, 1994.
+</p>
+<p class="small">
+Gallian, J.&nbsp;A.; Prout, J.; and Winters, S. "Graceful and Harmonious Labellings
+of Prism Related Graphs." <i>Ars Combin.</i> <b>34</b>, 213-222, 1992.
+</p>
+<p class="small">
+Gallian, J. "Dynamic Survey of Graph Labeling." <i>Elec. J. Combin.</i> <b>DS6</b>.
+<a href="http://www.combinatorics.org/Surveys/">http://www.combinatorics.org/Surveys/</a>.
+</p>
+<p class="small">
+Gardner, M. "Golomb's Graceful Graphs." Ch.&nbsp;15 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0716715899/ref=nosim/weisstein-20">Wheels, Life, and Other Mathematical Amusements.</a></i> New York: W.&nbsp;H. Freeman, pp.&nbsp;152-165,
+ 1983.
+</p>
+<p class="small">
+Golomb, S.&nbsp;W. "How to Number a Graph." In <i><a href="http://www.amazon.com/exec/obidos/ASIN/0125838506/ref=nosim/weisstein-20">Graph Theory and Computing</a></i> (Ed. R.&nbsp;C.&nbsp;Read). New York: Academic Press,
+ pp.&nbsp;23-37, 1972.
+</p>
+<p class="small">
+Golomb, S.&nbsp;W. "The Largest Graceful Subgraph of the Complete Graph."
+<i>Amer. Math. Monthly</i> <b>81</b>, 499-501, 1974.
+</p>
+<p class="small">
+Guy, R. "Monthly Research Problems, 1969-75." <i>Amer. Math. Monthly</i> <b>82</b>,
+995-1004, 1975.
+</p>
+<p class="small">
+Guy, R. "Monthly Research Problems, 1969-1979." <i>Amer. Math. Monthly</i> <b>86</b>,
+847-852, 1979.
+</p>
+<p class="small">
+Guy, R.&nbsp;K. "The Corresponding Modular Covering Problem. Harmonious Labelling of Graphs." §C13 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387208607/ref=nosim/weisstein-20">Unsolved
+ Problems in Number Theory, 2nd ed.</a></i> New York: Springer-Verlag, pp.&nbsp;127-128,
+ 1994.
+</p>
+<p class="small">
+Huang, J.&nbsp;H. and Skiena, S. "Gracefully Labelling Prisms." <i>Ars
+Combin.</i> <b>38</b>, 225-242, 1994.
+</p>
+<p class="small">
+Jungreis, D.&nbsp;S. and Reid, M. "Labelling Grids." <i>Ars Combin.</i> <b>34</b>,
+167-182, 1992.
+</p>
+<p class="small">
+Koh, K.&nbsp;M. and Punnim, N. "On Graceful Graphs: Cycles with 3-Consecutive
+Chords." <i>Bull. Malaysian Math. Soc.</i> <b>5</b>, 49-64, 1982.
+</p>
+<p class="small">
+Koh, K.&nbsp;M. and Yap, K.&nbsp;Y. "Graceful Numberings of Cycles with a <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline22.gif" class="inlineformula" width="15" height="14" border="0" alt="P_3">-Chord." <i>Bull. Inst. Math. Acad. Sinica</i> <b>13</b>,
+ 41-48, 1985.
+</p>
+<p class="small">
+Moulton, D. "Graceful Labellings of Triangular Snakes." <i>Ars Combin.</i> <b>28</b>,
+3-13, 1989.
+</p>
+<p class="small">
+Punnim, N. and Pabhapote, N. "On Graceful Graphs: Cycles with a <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline23.gif" class="inlineformula" width="15" height="14" border="0" alt="P_k">-Chord, <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline24.gif" class="inlineformula" width="28" height="14" border="0" alt="k&gt;=4">." <i>Ars Combin. A</i> <b>23</b>, 225-228,
+ 1987.
+</p>
+<p class="small">
+Rosa, A. "On Certain Valuations of the Vertices of a Graph." In <i>Theory of Graphs, International Symposium, Rome, July 1966.</i> New York: Gordon and Breach,
+ pp.&nbsp;349-355, 1967.
+</p>
+<p class="small">
+Sheppard, D.&nbsp;A. "The Factorial Representation of Balanced Labelled Graphs."
+<i>Discr. Math.</i> <b>15</b>, 379-388, 1976.
+</p>
+<p class="small">
+Sierksma, G. and Hoogeveen, H. "Seven Criteria for Integer Sequences Being Graphic."
+<i>J. Graph Th.</i> <b>15</b>, 223-231, 1991.
+</p>
+<p class="small">
+Slater, P.&nbsp;J. "Note on <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline25.gif" class="inlineformula" width="6" height="14" border="0" alt="k">-Graceful, Locally
+ Finite Graphs." <i>J. Combin. Th. Ser. B</i> <b>35</b>, 319-322, 1983.
+</p>
+<p class="small">
+Snevily, H.&nbsp;S. "New Families of Graphs That Have <img src="./Graceful Graph -- from Wolfram MathWorld_files/Inline26.gif" class="inlineformula" width="8" height="14" border="0" alt="alpha">-Labellings."
+ Preprint.
+</p>
+<p class="small">
+Snevily, H.&nbsp;S. "Remarks on the Graceful Tree Conjecture." Preprint.
+</p>
+<p class="small">
+Xie, L.&nbsp;T. and Liu, G.&nbsp;Z. "A Survey of the Problem of Graceful Trees."
+<i>Qufu Shiyuan Xuebao</i> <b>1</b>, 8-15, 1984.
+</p>
+<div class="line">
+<!-- -->
+</div>
+Referenced on Wolfram|Alpha: <a href="http://www.wolframalpha.com/entities/mathworld/graceful_graph/tm/6e/uz/" title="Graceful Graph" target="_blank">Graceful Graph</a>
+<!-- End References -->
+<!-- Begin CiteAs -->
+<div class="line">
+<!-- -->
+</div>
+<span>CITE THIS AS:</span>
+<p class="small">
+<a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W.</a> "Graceful Graph." From
+<a href="http://mathworld.wolfram.com/"><i>MathWorld</i></a>--A Wolfram Web Resource. <a href="./Graceful Graph -- from Wolfram MathWorld_files/Graceful Graph -- from Wolfram MathWorld.htm">http://mathworld.wolfram.com/GracefulGraph.html</a>
+</p>
+<!-- End CiteAs -->
+</div>
+<!-- End Total Content -->
+<!-- End Body -->
+</div>
+<!--End main content -->
+				
+<!--Start resources content -->
+				<div id="resourcesContent">
+					<h1>Wolfram Web Resources</h1>
+					<table summary="" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tbody><tr>
+							<td>
+								<span class="title"><a href="http://www.wolfram.com/mathematica/" target="_blank"><em>Mathematica</em>&nbsp;»</a></span>
+								<p>The #1 tool for creating Demonstrations and anything technical.</p>
+							</td>
+							<td>
+								<span class="title"><a href="http://www.wolframalpha.com/" target="_blank">Wolfram|Alpha&nbsp;»</a></span>
+								<p>Explore anything with the first computational knowledge engine.</p>
+							</td>
+							<td class="last">
+								<span class="title"><a href="http://demonstrations.wolfram.com/" target="_blank">Wolfram Demonstrations Project&nbsp;»</a></span>
+								<p>Explore thousands of free applications across science, mathematics, engineering, technology, business, art, finance, social sciences, and more.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="title"><a href="http://www.wolfram.com/cdf" target="_blank">Computable Document Format&nbsp;»</a></span>
+								<p>The format that makes Demonstrations (and any information) easy to share and interact with.</p>
+							</td>
+							<td>
+								<span class="title"><a href="http://www.wolfram.com/solutions/stem/" target="_blank">STEM initiative&nbsp;»</a></span>
+								<p>Programs &amp; resources for educators, schools &amp; students.</p>
+							</td>
+							<td class="last">
+								<span class="title"><a href="http://www.computerbasedmath.org/" target="_blank">Computerbasedmath.org&nbsp;»</a></span>
+								<p>Join the initiative for modernizing math education. </p>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>	
+<!--End resources content -->
+				
+<!--Start footer content -->
+				<div id="footer">
+					<table summary="" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tbody><tr>	
+							<td><a href="http://mathworld.wolfram.com/contact/"><img src="./Graceful Graph -- from Wolfram MathWorld_files/contact-icon.gif" alt="" title="" border="0"> Contact the <em>MathWorld</em> Team</a></td>
+							<td class="copyright">© 1999-2013 <a href="http://www.wolfram.com/" target="_blank">Wolfram Research, Inc.</a> | <a href="http://mathworld.wolfram.com/about/terms.html">Terms of Use</a></td>
+						</tr>
+					</tbody></table>
+				</div>
+<!--End footer content -->
+</td>
+<td>
+<div id="sidebar">
+						
+<div class="wawidgetWrapper">
+       
+<div class="wawidget">
+       <a href="http://www.wolframalpha.com/" class="walogolink" target="_blank" title="Wolfram|Alpha"></a>
+       <form target="_blank" action="http://www.wolframalpha.com/input/" name="wolframalpha">
+       <input type="text" value="" name="i" id="i">
+       <input type="image" src="./Graceful Graph -- from Wolfram MathWorld_files/WA-equals.gif" id="calculate">
+       </form>
+       
+<div class="clear">
+</div>
+       
+<div id="try">
+       <span>THINGS TO TRY:</span>
+       
+       
+<div><a target="_blank" href="http://www.wolframalpha.com/input/?i=7-ary+tree"><img src="./Graceful Graph -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">7-ary tree</a></div>
+
+<div><a target="_blank" href="http://www.wolframalpha.com/input/?i=curlicue+fractal"><img src="./Graceful Graph -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">curlicue fractal</a></div>
+
+<div><a target="_blank" href="http://www.wolframalpha.com/input/?i=multibrot+set%2C+d%3D6"><img src="./Graceful Graph -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">multibrot set, d=6</a></div>
+
+       
+</div>
+       
+</div>
+       
+</div>
+<div class="alphaWrapper">
+<a href="http://products.wolframalpha.com/mobile/" target="_blank"><img src="./Graceful Graph -- from Wolfram MathWorld_files/every-1.png" alt="Every smart device needs a knowledge app...Get the Wolfram|Alpha App" title="Every smart device needs a knowledge app...Get the Wolfram|Alpha App"></a>
+</div>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</body></html>

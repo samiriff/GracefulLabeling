@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0052)http://www.eleves.ens.fr/home/wfang/gtv/math_en.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mathematical Background - Graceful Tree Verification Project</title>
+
+<meta content="fwjmath" name="author">
+<meta content="graceful, tree, algorithm, labelling, conjecture" name="keywords">
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); direction: ltr;" alink="#33ffff" link="#0000ff" vlink="#cc33cc">
+<h1 style="text-align: center;">
+<a name="项目数学背景"></a>Mathematical Background</h1>
+<a href="http://www.eleves.ens.fr/home/wfang/gtv/index_en.html" target="_top">Back to Homepage</a>
+<hr style="width: 100%; height: 2px;">
+<h3>Definition of Gracefulness of a Tree<span style="text-decoration: underline;"></span></h3>
+For introduction, we'll talk about the definition of a graceful tree.<br>
+<br>
+<img style="width: 525px; height: 671px;" alt="An example of graceful tree" src="./Mathematical Background - Graceful Tree Verification Project_files/T31_1.jpg"><br>
+<br>
+As you can see from above, this is a tree with 31 nodes. Its vertices are labelled from 0 to 30 without repetition or omission. This is called a labelling on vertices.<br>
+<br>
+If you look at numbers beside each edge, you will find that it is the difference of labels of its two endpoints. This is called a labelling on edges induced by a labelling on vertices.<br>
+<br>
+There are 30 edges on this tree. If we look carefully at labels on edges, we'll find that every number from 1 to 30 appears once and only once. A labelling on vertices that induce such a labelling on edges is called graceful labelling of this tree.<br>
+<br>
+More generally, a tree with n vertices has n-1 edges. If a labelling on vertices, in which every number from 0 to n-1 appears once and only once, can induce a labelling on edges where every number from 1 to n-1 appears once and only once, this labelling on vertices is called a graceful labelling.<br>
+<br>
+If a tree has at least one graceful labelling, it is called a graceful tree. By definition, the tree above is graceful.<br>
+<br>
+This definition of gracefulness is restricted to trees. It can be extended to general simple graphs.<br>
+<br>
+The notion of a graceful labelling was proposed by Rosa in 1967. At that time he named it "β-valuation". The name "graceful labelling" was proposed by Golomb in 1972.<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Graceful Tree Conjecture</h3>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Graceful Tree Conjecture (Ringel-Kötzig Conjecture): Every tree is graceful.</strong></td>
+</tr>
+</tbody>
+</table>
+<br>
+This conjecture implies the Ringel Conjecture: the complete graph K(2n+1) can be decomposed into 2n+1 isomorphic trees, each containing n edges.<br>
+<br>
+Up to now, we have not many idea about how to deal with this conjecture, and it has attracted many mathematicians to work on it. Kötzig once said that effort for proving this conjecture is a "disease".<br>
+<br>
+But we still have obtained some incomplete results. We have now proved gracefulness for some special classes of trees. Take caterpillars as an example. For a tree, if after removing all its leaves the remain is a path, this tree is called a caterpillar. It's easy to design an algorithm to construct a graceful labelling for a caterpillar. So caterpillars are graceful, by definition.<br>
+<br>
+There are many theoretical results like this for other special types of trees. A more general result is proved by P. HrnČiar and A.Haviar in 2001[1]. They have proved that every tree with diametre at most 5 is graceful. Here, the diametre of a tree is defined by the largest distance between two vertices of this tree, counted by number of edges between these two vertices.
+<br>
+<br>
+There are mathematicians who tried to use computers for verification of this conjecture. In 1998, Aldred and McKay did a verification of this conjecture on trees with at most 27 vertices[2]. They use an algorithm combining hill-climbing search and tabu search.<br>
+<br>
+The algorithm used by this project is greatly optimized for a better speed.<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Number of Trees</h3>
+Why do we need so much idle computational power for this verification?<br>
+<br>
+Below is a list of number of trees with a certain number of vertices.<br>
+<br>
+<table style="width: 30%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="text-align: center;">n</td>
+<td style="text-align: center;">Trees with n vertices</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>11</td>
+</tr>
+<tr>
+<td>8</td>
+<td>23</td>
+</tr>
+<tr>
+<td>9</td>
+<td>47</td>
+</tr>
+<tr>
+<td>10</td>
+<td>106</td>
+</tr>
+<tr>
+<td>11</td>
+<td>235</td>
+</tr>
+<tr>
+<td>12</td>
+<td>551</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1,301</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3,159</td>
+</tr>
+<tr>
+<td>15</td>
+<td>7,741</td>
+</tr>
+<tr>
+<td>16</td>
+<td>19,320</td>
+</tr>
+<tr>
+<td>17</td>
+<td>48,629</td>
+</tr>
+<tr>
+<td>18</td>
+<td>123,867</td>
+</tr>
+<tr>
+<td>19</td>
+<td>317,955</td>
+</tr>
+<tr>
+<td>20</td>
+<td>823,065</td>
+</tr>
+<tr>
+<td>21</td>
+<td>2,144,505</td>
+</tr>
+<tr>
+<td>22</td>
+<td>5,623,756</td>
+</tr>
+<tr>
+<td>23</td>
+<td>14,828,074</td>
+</tr>
+<tr>
+<td>24</td>
+<td>39,299,897</td>
+</tr>
+<tr>
+<td>25</td>
+<td>104,636,890</td>
+</tr>
+<tr>
+<td>26</td>
+<td>279,793,450</td>
+</tr>
+<tr>
+<td>27</td>
+<td>751,065,460</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2,023,443,032</td>
+</tr>
+<tr>
+<td>29</td>
+<td>5,469,566,585</td>
+</tr>
+<tr>
+<td>30</td>
+<td>14,830,871,802</td>
+</tr>
+<tr>
+<td>31</td>
+<td>40,330,829,030</td>
+</tr>
+<tr>
+<td>32</td>
+<td>109,972,410,221</td>
+</tr>
+</tbody>
+</table>
+<br>
+We can see that the number of trees with n vertices grows exponentially with n. An empirical relation is O(2.6687^n). So computational power needed for verification also grows exponentially. That's why we need you!
+<hr style="width: 100%; height: 2px;">
+<h3>Reference and Further Reading</h3>
+An introduction of <a href="http://en.wikipedia.org/wiki/Graceful_labeling" target="_blank">graceful labelling</a> on wikipedia.<br>
+<br>
+An introduction of <a href="http://mathworld.wolfram.com/GracefulGraph.html" target="_blank">graceful graph</a> on Mathworld.<br>
+<br>
+Joseph A. Gallian, "A Dynamic Survey of Graph Labeling." The Electronic
+Journal of Combinatorics 5 (1998). <a target="_blank" href="http://en.wikipedia.org/wiki/Mathematical_Reviews" title="Mathematical Reviews">MR</a>&nbsp;<a target="_blank" href="http://www.ams.org/mathscinet-getitem?mr=1668059" class="external text" title="http://www.ams.org/mathscinet-getitem?mr=1668059" rel="nofollow">1668059</a> <a target="_blank" href="http://www.combinatorics.org/Surveys/ds6.pdf" class="external text" title="http://www.combinatorics.org/Surveys/ds6.pdf" rel="nofollow">PDF</a>,
+updated in 2008. This is a dynamic survey of labellings on graphs, graceful labelling included.<br>
+<br>
+[1] P. HrnČiar, A. Haviar, All trees of diameter
+five are graceful, Discrete Math. 233 (2001)
+133-150<br>
+[2] Aldred, R. E. L. and McKay, B. "Graceful and
+Harmonious Labellings
+of Trees." Bull. Inst. Combin. Appl. 23,
+69-72, 1998.<br>
+<br>
+If you have any suggestion for this page, please feel free to mail them to <a href="mailto:projectgtv@gmail.com">projectgtv@gmail.com</a>!
+<hr style="width: 100%; height: 2px;"><a href="http://www.eleves.ens.fr/home/wfang/gtv/math_en.html#%E9%A1%B9%E7%9B%AE%E6%95%B0%E5%AD%A6%E8%83%8C%E6%99%AF">
+Back to Top</a>&nbsp;&nbsp;&nbsp; <a href="http://www.eleves.ens.fr/home/wfang/gtv/index_en.html" target="_top">Back to Homepage</a><br>
+<div style="text-align: center;">By <a href="mailto:projectgtv@gmail.com">FANG Wenjie(aka fwjmath)</a><br>
+<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/cn/deed.en" id="link_tb0" target="_blank">Attribution-Noncommercial-No Derivative Works 2.5 China Mainland</a><br>
+</div>
+</body></html>
